@@ -1,3 +1,3 @@
-# Animais fantásticos
+# Fantastic Beasts
 
-Principais métodos do javascript para frontend, esse repositório serve basicamente para consultar as principais funções do javascript e manipulações para frontend.
+This project is completely focused on pure javascript and its main features, the project's goal is to explore the language as much as possible without any kind of library/framework.
