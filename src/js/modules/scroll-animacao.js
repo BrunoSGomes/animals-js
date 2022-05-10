@@ -9,6 +9,8 @@ export default function initScrollAnimation() {
                 const isSectionVisible = (sectionTop - halfWindow) < 0
                 if (isSectionVisible) {
                     section.classList.add('ativo')
+                } else if (section.classList.contains('ativo')) {
+                    section.classList.remove('ativo')
                 }
             })
         }

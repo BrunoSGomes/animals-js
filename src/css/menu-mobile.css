@@ -28,10 +28,15 @@
         width: 12px;
         background: white;
         box-shadow: 0 4px white, 0 -4px white;
+        transition: transform .3s;
     }
 
-    .js #menu {
-        display: block;
+    .js [data-menu="button"].active::before {
+        transform: rotate(90deg);
+    }
+
+    .js [data-menu="list"] {
+        display: none;
         position: absolute;
         background: #FB5;
         width: 160px;
@@ -39,6 +44,11 @@
         top: 0;
         padding: 60px 0 20px 0;
         box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .2);
+    }
+
+    .js [data-menu="list"].active {
+        display: block;
+        animation: show-right .3s forwards;
     }
 
     .js .dropdown-menu {
