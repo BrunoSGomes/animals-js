@@ -18,7 +18,7 @@ export default class AccordionList {
     }
 
     toggleAccordion(item) {
-        item.target.classList.toggle(this.activeClass);
-        item.srcElement.nextElementSibling.classList.toggle(this.activeClass);
+        item.classList.toggle(this.activeClass);
+        item.nextElementSibling.classList.toggle(this.activeClass);
     }
 }
