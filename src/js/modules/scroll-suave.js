@@ -1,19 +1,27 @@
-export default function initSmoothScroll() {
-    const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
+export default class SmoothScroll {
+    constructor(links, options) {
+        this.linksInternos = document.querySelectorAll(links);
+        if (options === undefined) this.options = { behavior: 'smooth', block: 'start' };
+        else this.options = options;
 
-    function scrollToSection(event) {
+        this.scrollToSection = this.scrollToSection.bind(this);
+    }
+
+    init() {
+        if (this.linksInternos.length) this.addLinkEvent();
+        return this;
+    }
+
+    scrollToSection(event) {
         event.preventDefault();
         const href = event.currentTarget.getAttribute('href');
         const section = document.querySelector(href);
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
+        section.scrollIntoView(this.options);
     }
 
-    linksInternos.forEach((link) => {
-        link.addEventListener('click', (event) => {
-            scrollToSection(event);
+    addLinkEvent() {
+        this.linksInternos.forEach((link) => {
+            link.addEventListener('click', this.scrollToSection);
         });
-    });
+    }
 }
