@@ -9,6 +9,7 @@ export default class AccordionList {
             this.toggleAccordion(this.accordionList[0]);
             this.addAccordionEvent();
         }
+        return this;
     }
 
     addAccordionEvent() {
