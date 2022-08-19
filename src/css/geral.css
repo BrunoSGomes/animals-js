@@ -26,6 +26,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
